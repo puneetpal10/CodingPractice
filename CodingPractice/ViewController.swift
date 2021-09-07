@@ -20,12 +20,45 @@ class ViewController: UIViewController {
 //        let output = addTwoSum([8,5,3,4], target: 12)
 //        print(output)
         
-       let count = lengthOfLongestSubstring("pwwkew")
-        print(count)
+//       let count = lengthOfLongestSubstring("pwwkew")
+//        print(count)
+//
+//        _ = binarySearch(array: array, key: -23)
+//
         
-        _ = binarySearch(array: array, key: -23)
+        
+       let value =  checkBalancedBrackets(string: "[[]")
+        print(value)
+        
         
     }
+    
+    
+    func checkBalancedBrackets(string: String) -> Bool {
+        
+        var stack = [Character]()
+        let mapBrackets : [Character: Character] = ["}":"{", ")":"(", "]":"["]
+        let openingBrackets = "([{"
+        for char in string {
+            if openingBrackets.contains(char){
+                stack.append(char)
+            }
+            else {
+                if stack.isEmpty {
+                    return false
+                }
+                else
+                if let last = stack.last, last == mapBrackets[char] {
+                   _ = stack.popLast()
+                }
+                else {
+                    return false
+                }
+            }
+        }
+        return stack.isEmpty
+    }
+
     
     func addTwoSum(_ nums: [Int], target: Int) -> [Int]{
         

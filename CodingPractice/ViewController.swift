@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     
     let array = [1,4,6,7,10,12,18,19,23,23]
+    let str = "puneet"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,10 +29,14 @@ class ViewController: UIViewController {
 //
         
         
-       let value =  checkBalancedBrackets(string: "[[]")
-        print(value)
+       //let value =  checkBalancedBrackets(string: "[[]")
+//        print(value)
         
+//        print(reverseString(str))
         
+     //   floyedTraingle(length: 5)
+
+
     }
     
     
@@ -149,5 +155,29 @@ class ViewController: UIViewController {
         }
         return false
     }
+    
+    
+    func reverseString(_ originalStr: String) -> String {
+        var word = [Character]()
+        for char in originalStr {
+            word.insert(char, at: 0)
+        }
+        return String(word)
+    }
+    
+    func floyedTraingle(length: Int) {
+        var k = 0
+        
+        for i in 0 ..< length {
+            for j in 0 ..< i {
+                k += 1
+                
+                print("\(k)  ")
+            }
+            print(" ")
+        }
+    }
 }
+
+
 
